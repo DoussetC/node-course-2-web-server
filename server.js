@@ -34,19 +34,22 @@ app.use((req, res, next) => {
   next();
 })
 
+/*
+// use for maintenance purpose only
 app.use((req, res, next) => {
   res.render('maintenance.hbs', {
     title: 'we will be right back!!'
   })
 })
-
+*/
 
 app.get('/', (req, res) => {
   // res.send('<h1>Hello Express!!</h1>');
-  res.send({
-    name: 'Charles',
-    likes: ['biking, cities']
-  })
+  res.render('home.hbs')
+})
+app.get('/project', (req, res) => {
+  // res.send('<h1>Hello Express!!</h1>');
+  res.render('project.hbs')
 })
 
 app.get('/about', (req, res) => {

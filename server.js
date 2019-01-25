@@ -5,7 +5,7 @@ const fs = require('fs')
 const log = require('npmlog');
 const hbs = require('hbs');
 
-
+const port = process.env.PORT || 8080;
 
 
 
@@ -62,6 +62,6 @@ app.get('/bad', (req, res) => {
 })
 
 
-app.listen(8080, () => {
-  log.info('Express', 'app listenting on port 8080...');
+app.listen(port, () => {
+  log.info('Express', `app listenting on port ${port}...`);
 })
